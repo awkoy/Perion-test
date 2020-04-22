@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import VueRouter from 'vue-router';
+import VueRouter, { Route } from 'vue-router';
 import Home from '../views/Home.vue';
 
 Vue.use(VueRouter);
@@ -13,6 +13,7 @@ const routes = [
   {
     path: '/movies/:movieId',
     name: 'MovieView',
+    props: (route: Route) => ({ movieId: route.params.movieId }),
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
